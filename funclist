@@ -1,0 +1,25 @@
+___awdiv: CODE, 789 0 118
+_lcd_wait_busy: CODE, 1635 0 48
+_NumberDisplay: CODE, 1360 0 63
+_lcd_command: CODE, 2014 0 19
+_isButtonNumber: CODE, 1533 0 53
+_lcd_delay: CODE, 1975 0 20
+_hethong: CODE, 21 0 279
+_kiemtranut: CODE, 1423 0 56
+_lcd_putc: CODE, 1955 0 20
+_lcd_puts: CODE, 1768 0 35
+_write_data: CODE, 300 0 194
+___awmod: CODE, 1012 0 104
+_main: CODE, 1683 0 47
+_scan_key_matrix: CODE, 494 0 166
+_system1: CODE, 2033 0 9
+i1_Delay: CODE, 1836 0 32
+_lcd_gotoxy: CODE, 1479 0 54
+_isr: CODE, 907 0 105
+_ketqua: CODE, 1116 0 91
+_Delay: CODE, 1730 0 38
+_isButton1: CODE, 1207 0 17
+_isButtonsao: CODE, 1868 0 31
+_lcd_init: CODE, 660 0 129
+___bmul: CODE, 1929 0 26
+Total: 1754
