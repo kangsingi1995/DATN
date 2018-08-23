@@ -1,48 +1,18 @@
 #include "main.h"
 
-void interrupt isr(void)
+void interrupt isr()
 {
-	if(T0IF)
-	{
-		T0IF=0;
-		count++;
-		if(count==125)
-		{
-			count=0;
-			RE2=~RE2;	
-		}
-	}
-	if(INTF&&INTE)
-	{
-		INTF=0;
-		count++;//sau m?i l?n nh?n press s? t? tang 1 don v?
-			switch(count)
-			{
-				case 1: 
-					RE1 = 1;
-					RE2	= 0;
-					Delay(5);
-					break;
-				case 2:
-					RE1 = 0;
-					RE2	= 1;
-					Delay(5);
-					break;
-				case 3: 
-					RE1 = 1;
-					RE2	= 1;
-					Delay(5);
-					break;
-				default: 
-					RE1 = 0;
-					RE2	= 0;
-					Delay(5);
-				    count = 0;
-					break;	
-			}
-			
-		
-	}
+    if(INTE && INTF)
+    {
+        INTF = 0;
+        STOP = 1;
+        dk1 = 0;
+        dk2 = 0;
+        cb = 0;
+        biennho1 = 0;
+        biennho2 = 0;
+        demdao = 0;
+    }
 }
 
 void enble_interrupt(char name_interrupt)
@@ -65,6 +35,16 @@ void enble_interrupt(char name_interrupt)
 			 INTE=1;
 			 INTF=0;
  			break;
+        case ngatPortB:
+            nRBPU = 0;//cho phép dien tro kéo lên
+            //WPUB0=1;//khai báo kéo tro lên là chân B0
+            WPUB=0b00000111;
+            INTEDG = 0;
+            RBIF = 0;
+            RBIE = 1;
+            GIE = 1;
+            IOCB = 0b00000111;
+            break;
 		
 	}			
 }

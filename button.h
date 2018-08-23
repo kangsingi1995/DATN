@@ -2,8 +2,8 @@
 #define _BUTTON_H_
 
 
-#define PORT_BUTTON		PORTB
-#define TRIS_BUTTON		TRISB
+#define PORT_BUTTON		PORTD
+#define TRIS_BUTTON		TRISD
 #define	MAX_COL			4
 #define MAX_ROW			4
 
